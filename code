@@ -1,0 +1,21 @@
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        // Create an unordered set to track unique elements
+        unordered_set<int> megaSet;
+
+        // Traverse each element in the array
+        for (int i = 0; i < nums.size(); i++) {
+            // If the element already exists in the set, it's a duplicate
+            if (megaSet.count(nums[i])) {
+                return true;
+            }
+            // Otherwise, insert the element into the set
+            megaSet.insert(nums[i]);
+        }
+
+        // If no duplicates found, return false
+        return false;
+    }
+};
